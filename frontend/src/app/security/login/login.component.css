@@ -1,0 +1,39 @@
+.root-login {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.logo-decora {
+  height: 80px;
+  margin-right: 16px;
+}
+
+.header-login {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+.label-login {
+  font-size: 56px;
+  font-weight: 200;
+}
+
+.card-login {
+  width: 400px;
+  margin-bottom: 24px;
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+}
+
+.actions-card {
+  display: flex;
+  justify-content: flex-end;
+}

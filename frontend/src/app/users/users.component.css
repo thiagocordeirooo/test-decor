@@ -1,0 +1,15 @@
+.container-button-new {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+  margin-bottom: 8px;
+}
+
+.container-table {
+  display: flex;
+  justify-content: center;
+}
+
+.users-table {
+  width: 90%;
+}

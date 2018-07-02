@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@mail.com",
+      "name": "Admin",
+      "lastName": "",
+      "password": "admin",
+      "profile": "ADMIN",
+      "accessToken": "a5fc4aa1-4aa4-ccb5-099e-312e70ca0169"
+    }
+  ]
+}

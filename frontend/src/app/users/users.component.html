@@ -1,0 +1,47 @@
+<dec-header-page title="Usuários"></dec-header-page>
+
+<div class="container-button-new" *ngIf="isAdminUser">
+  <button mat-button color="primary" matTooltip="Cadastrar Usuário" [routerLink]="['/users/user']">NOVO</button>
+</div>
+
+<div class="container-table">
+  <mat-table [dataSource]="dataSource" class="users-table">
+
+    <ng-container matColumnDef="id" fxFlex="100px">
+      <mat-header-cell *matHeaderCellDef fxFlex="100px"> Id </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Sobrenome </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.lastName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="profile">
+      <mat-header-cell *matHeaderCellDef> Perfil </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.profile}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions" *ngIf="isAdminUser">
+      <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <button mat-icon-button color="primary" [routerLink]="['/users/user', user.id ]" matTooltip="Editar">
+          <mat-icon aria-label="Editar">edit</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

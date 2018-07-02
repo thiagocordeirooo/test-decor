@@ -1,0 +1,16 @@
+<mat-toolbar class="header">
+  <mat-toolbar-row>
+    <div class="continer-logo">
+      <img src="../../assets/logo-decora.png" alt='decora' class="logo-decora" />
+      <img src="../../assets/decora.png" alt='decora' class="img-decora" />
+    </div>
+
+    <span class="spacer"></span>
+    <div *ngIf="isAuthenticated" class="container-user">
+      <span class="hello-user">
+        Olá, {{currentUser.name}}
+      </span>
+      <mat-icon class="icon-exit" matTooltip="Sair" (click)="logOut()">exit_to_app</mat-icon>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

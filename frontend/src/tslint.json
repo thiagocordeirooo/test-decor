@@ -1,0 +1,35 @@
+// {
+//     "extends": "../tslint.json",
+//     "rules": {
+//         "directive-selector": [
+//             true,
+//             "attribute",
+//             "dec",
+//             "camelCase"
+//         ],
+//         "component-selector": [
+//             true,
+//             "element",
+//             "dec",
+//             "kebab-case"
+//         ]
+//     }
+// }
+
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2016", "dom"],
+    "outDir": "../out-tsc/app",
+    "target": "es5",
+    "module": "es2015",
+    "baseUrl": "",
+    "types": [],
+    "typeRoots": ["../node_modules/@types"]
+  },
+  "exclude": ["test.ts", "**/*.spec.ts"]
+}

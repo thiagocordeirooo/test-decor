@@ -1,0 +1,20 @@
+.root-card-user {
+  display: flex;
+  justify-content: center;
+}
+
+.card-user {
+  width: 400px;
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 310px;
+}
+
+.actions-card {
+  display: flex;
+  justify-content: flex-end;
+}
