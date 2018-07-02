@@ -18,7 +18,7 @@ cd frontend
 npm start
 ```
 
-> Primeiro usuário para conseguir acessa o sistema:
+> Primeiro usuário para conseguir acessar o sistema:
 >
 > Usuário: admin@mail.com
 >
