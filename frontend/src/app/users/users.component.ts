@@ -1,9 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { UsersService } from "./users.service";
-import { Observable } from "rxjs";
-import { User } from "./user/user.model";
-import { DataSource } from "@angular/cdk/table";
 import { LoginService } from "../security/login/login.service";
+import { MatTableDataSource } from "@angular/material";
 
 @Component({
   selector: "dec-users",
@@ -11,7 +9,7 @@ import { LoginService } from "../security/login/login.service";
   styleUrls: ["./users.component.css"]
 })
 export class UsersComponent implements OnInit {
-  dataSource = new UsersDataSource(this.usersService);
+  dataSource = new MatTableDataSource([]);
   displayedColumns = ["id", "email", "name", "lastName", "profile"];
   isAdminUser: boolean = false;
 
@@ -25,15 +23,13 @@ export class UsersComponent implements OnInit {
     if (this.isAdminUser) {
       this.displayedColumns.push("actions");
     }
-  }
-}
 
-export class UsersDataSource extends DataSource<any> {
-  constructor(private usersService: UsersService) {
-    super();
+    this.usersService
+      .getAll()
+      .subscribe(users => (this.dataSource = new MatTableDataSource(users)));
   }
-  connect(): Observable<User[]> {
-    return this.usersService.getAll();
+
+  filter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  disconnect() {}
 }
